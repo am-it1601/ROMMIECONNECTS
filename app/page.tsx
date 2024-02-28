@@ -193,7 +193,8 @@ export default function Home() {
         <Slider />
       </section>
 
-      <section className=" bg-[#FAFAFA] pb-20">
+      {/*  */}
+      <section className=" bg-[#FAFAFA] pb-20 pt-5">
         <div className="pt-5">
           <h1 className="text-3xl max-sm:text-3xl text-primary text-center  font-bold">
             Free
