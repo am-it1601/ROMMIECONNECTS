@@ -19,6 +19,8 @@ const config: Config = {
       backgroundImage: {
         'my_bg_image' : "url('../public/img.jpeg')",
         'earth' : "url('../public/Layer.png')",
+        'hover' : "url('../public/img1.png')",
+        'hover2' : "url('../public/img-5.png')",
       },
      
       colors:{

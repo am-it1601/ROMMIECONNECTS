@@ -18,10 +18,11 @@ import {
   CustomHousingGrid,
   CustomSearchButton,
   GridTemplate,
-  Slider,
   ThreeCols,
+  TopButton,
 } from "./_components/shared";
-import { AlertOctagon } from "lucide-react";
+import { AlertOctagon, ArrowRight } from "lucide-react";
+import { Slider } from "./_components/slider/slider";
 
 export default function Home() {
   return (
@@ -43,9 +44,9 @@ export default function Home() {
               <CustomButton />
             </div>
           </div>
-          {/* <div className="absolute bottom-0 flex items-center justify-between w-[75%] left-[10%] m-auto md:flex-wrap md:translate-y-3/4 md:gap-5  mx-10 translate-y-1/2 z-20  bg-white rounded-full py-4 px-2 shadow-lg">
+          <div className=" absolute bottom-0 flex items-center justify-between  left-[50%] top[50%] w-[65%]  md:flex-wrap md:translate-y-3/4 md:gap-5  -translate-x-1/2 -translate-y-1/2 z-20  bg-white rounded-full py-4 px-2 shadow-lg">
             <CustomSearchButton />
-          </div> */}
+          </div>
           <div className="grid grid-cols-3 auto-rows-[200px] max-sm:grid-rows-4">
             <div className="row-span-2">
               <Image
@@ -91,7 +92,26 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <section className="p-3 mt-20 mb-10 max-w-screen-2xl m-auto">
+
+        <div className="mt-[100px] flex items-center justify-center gap-4 max-w-screen-2xl m-auto ">
+          <span>Trending Searches : </span>
+          <div className="flex items-center justify-center gap-3">
+            <span className="bg-[#F5F5F5] rounded-full p-2 px-4">
+              Karachi, Pakistan
+            </span>
+            <span className="bg-[#F5F5F5] rounded-full p-2 px-4">
+              Karachi, Pakistan
+            </span>
+            <span className="bg-[#F5F5F5] rounded-full p-2 px-4">
+              Karachi, Pakistan
+            </span>
+          </div>
+          <span className="bg-primary p-2 rounded-full ">
+            <ArrowRight color="white" />
+          </span>
+        </div>
+
+        <section className="p-3 mt-10 mb-10 max-w-screen-2xl m-auto">
           <h2 className="text-3xl font-bold my-4">Browse by Property type</h2>
           <GridTemplate />
         </section>
@@ -208,6 +228,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <TopButton />
+
       <Footer />
     </>
   );
