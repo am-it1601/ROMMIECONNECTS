@@ -13,8 +13,8 @@ import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
 import { FaQuoteRight } from "react-icons/fa";
-import data from "./data";
 import {
+  ArrowUp,
   BadgePercent,
   ChevronLeft,
   ChevronRight,
@@ -65,13 +65,25 @@ export function CustomSearchButton() {
     <div className="flex items-center justify-between gap-4 px-4 w-full ">
       <div className="flex gap-4">
         <div className=" border-r-2 border-gray-300">
-          <input type="text" placeholder="select" className=" p-3 " />
+          <input
+            type="text"
+            placeholder="select"
+            className=" p-3 focus:outline-none "
+          />
         </div>
         <div className=" border-r-2 border-gray-300">
-          <input type="text" placeholder="location" className=" p-3" />
+          <input
+            type="text"
+            placeholder="search for location"
+            className=" p-3 focus:outline-none"
+          />
         </div>
         <div className=" border-r-2 border-gray-300">
-          <input type="date" placeholder="date" className=" p-3" />
+          <input
+            type="date"
+            placeholder="search for date"
+            className=" p-3 focus:outline-none"
+          />
         </div>
       </div>
       <div>
@@ -199,8 +211,8 @@ export const GridTemplate = () => {
 export const ThreeCols = ({ img }: any) => {
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        <div className="col-span-1 md:col-span-2 lg:col-span-1 bg-white p-6 h-[200px] rounded-md overflow-hidden">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 relative">
+        <div className="col-span-1 md:col-span-2 lg:col-span-1 bg-white hover:bg-hover transition-colors duration-300 ease-in-out p-6 h-[200px] rounded-md overflow-hidden">
           <div className="flex items-center justify-between  relative">
             <div className="flex flex-col gap-y-3">
               <span>
@@ -217,13 +229,13 @@ export const ThreeCols = ({ img }: any) => {
             varius pretium orci a aliquet.
           </p>
         </div>
-        <div className="col-span-1 md:col-span-2 lg:col-span-1 bg-white p-6 h-[200px] rounded-md overflow-hidden">
+        <div className="col-span-1 md:col-span-2 lg:col-span-1 hover:text-white bg-white hover:bg-hover2 p-6 h-[200px] rounded-md overflow-hidden">
           <div className="flex items-center justify-between relative">
             <div className="flex flex-col gap-y-3">
               <span>
                 <ShieldCheck color="#FF6522" size={30} />
               </span>
-              <p className="text-lg font-semibold">Extra security</p>
+              <p className="text-lg font-semibold ">Extra security</p>
             </div>
             <span className="text-gray-400 text-3xl font-semibold right-0 top-0 absolute">
               02
@@ -306,67 +318,42 @@ export const ThreeCols = ({ img }: any) => {
     </>
   );
 };
-
-export const Slider = () => {
-  const [people, setPeople] = useState(data);
-  const [index, setIndex] = useState(1);
+export const TopButton = () => {
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const lastIndex = people.length - 1;
-    if (index < 0) {
-      setIndex(lastIndex);
-    }
-    if (index > lastIndex) {
-      setIndex(0);
-    }
-  }, [index, people]);
+    const toggleVisibility = () => {
+      if (window.pageYOffset > 100) {
+        // Change 100 to your desired scroll position
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
 
-  const handleDotClick = (idx: any) => {
-    setIndex(idx);
+    window.addEventListener("scroll", toggleVisibility);
+
+    // Cleanup function to remove the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", toggleVisibility);
+    };
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   return (
-    <section className="section">
-      <div className="section-center bg-earth bg-no-repeat bg-center ">
-        {people.map((person, personIndex) => {
-          const { id, image, name, title, quote } = person;
-
-          let position;
-          if (personIndex === index) {
-            position = "activeSlide";
-          } else if (
-            personIndex === index - 1 ||
-            (index === 0 && personIndex === people.length - 1)
-          ) {
-            position = "lastSlide";
-          } else {
-            position = "nextSlide";
-          }
-
-          return (
-            <article className={position} key={id}>
-              <h4>{name}</h4>
-              <p className="title">{title}</p>
-              <p className="text">{quote}</p>
-            </article>
-          );
-        })}
-        <div className="dots">
-          {people.map((_, idx) => (
-            <span
-              key={idx}
-              className={idx === index ? "!bg-[#034679]" : ""}
-              onClick={() => handleDotClick(idx)}
-            ></span>
-          ))}
-        </div>
-        <button className="prev" onClick={() => setIndex(index - 1)}>
-          <ChevronLeft />
-        </button>
-        <button className="next" onClick={() => setIndex(index + 1)}>
-          <ChevronRight />
-        </button>
-      </div>
-    </section>
+    <button
+      onClick={scrollToTop}
+      className={`fixed right-14 z-50 bottom-16 bg-white px-3 py-4 rounded-lg shadow-lg ${
+        isVisible ? "block" : "hidden"
+      }`}
+    >
+      <ArrowUp className="z-50" />
+    </button>
   );
 };
