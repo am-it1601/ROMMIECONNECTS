@@ -47,12 +47,10 @@ Variables
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 500;
 }
 .title span {
   font-size: 0.85em;
   margin-right: 1rem;
-  font-weight: 700;
 }
 .section-center {
   margin: 0 auto;
@@ -105,7 +103,6 @@ article h4 {
   max-width: 35em;
   margin: 0 auto;
   margin-top: 2rem;
-  line-height: 2;
 }
 .icon {
   font-size: 3rem;
@@ -169,4 +166,16 @@ article.lastSlide {
 }
 article.nextSlide {
   transform: translateX(100%);
+}
+
+col-span-1 {
+  /* Other styles */
+  background-color: white; /* Initial background color */
+  transition-duration: 300ms; /* Duration of the transition */
+  transition: 0.3s ease-in-out; /* Timing function for the transition */
+}
+
+.col-span-1:hover {
+  background-image: url(../public/img-3.png); /* Change background image on hover */
+
 }

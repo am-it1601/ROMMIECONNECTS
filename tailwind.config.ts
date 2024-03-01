@@ -24,7 +24,14 @@ const config: Config = {
       },
      
       colors:{
-        primary:'#FF6522'
+        primary:'#FF6522',
+        text_white:"#FAFAFA",
+        text_color:'#969696',
+        text_primary:'#666666',
+        text_secondary:"#AAAAAA",
+        star_color:"#FFD600",
+        text_light_black:'#0F2137',
+        // text_black:"#2E2E2E"
       }
     },
   },

@@ -12,7 +12,7 @@ const Navbar = () => {
             href="#"
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
-            <span className="self-center max-sm:text-sm text-xl whitespace-nowrap text-primary font-normal">
+            <span className="self-center max-sm:text-sm text-xl whitespace-nowrap text-primary font-normal p-regular-24 ">
               ROMMIECONNECTS
             </span>
           </a>
@@ -21,7 +21,7 @@ const Navbar = () => {
               <Link href="/sign-in">
                 <button
                   type="button"
-                  className="text-primary capitalize focus:outline-none  font-medium rounded-lg text-sm px-4 py-2 text-center "
+                  className="text-primary capitalize focus:outline-none  font-medium rounded-lg px-4 py-2 text-center  p-medium-14 "
                 >
                   Log In
                 </button>
@@ -45,7 +45,7 @@ const Navbar = () => {
               <li>
                 <Link
                   href="#"
-                  className="block py-2 px-3 md:p-0 text-black  rounded md:bg-transparent hover:text-primary"
+                  className="block py-2 px-3 md:p-0 text-black  rounded md:bg-transparent hover:text-primary p-bold-20"
                   aria-current="page"
                 >
                   Home
@@ -54,7 +54,7 @@ const Navbar = () => {
               <li>
                 <Link
                   href="#"
-                  className="block py-2 px-3 md:p-0 text-gray-900 rounded  hover:text-primary    "
+                  className="block py-2 px-3 md:p-0 text-gray-900 rounded  hover:text-primary p-bold-20    "
                 >
                   About
                 </Link>
@@ -62,7 +62,7 @@ const Navbar = () => {
               <li>
                 <Link
                   href="#"
-                  className="block py-2 px-3 md:p-0 text-gray-900 rounded  hover:text-primary"
+                  className="block py-2 px-3 md:p-0 text-gray-900 rounded  hover:text-primary p-bold-20"
                 >
                   Services
                 </Link>
@@ -70,7 +70,7 @@ const Navbar = () => {
               <li>
                 <Link
                   href="#"
-                  className="block py-2 px-3 md:p-0 text-gray-900 rounded  hover:text-primary"
+                  className="block py-2 px-3 md:p-0 text-gray-900 rounded  hover:text-primary p-bold-20"
                 >
                   Pricing
                 </Link>
@@ -78,7 +78,7 @@ const Navbar = () => {
               <li>
                 <Link
                   href="#"
-                  className="block py-2 px-3 md:p-0 text-gray-900 rounded  hover:text-primary"
+                  className="block py-2 px-3 md:p-0 text-gray-900 rounded  hover:text-primary p-bold-20"
                 >
                   FAQ
                 </Link>
@@ -86,7 +86,7 @@ const Navbar = () => {
               <li>
                 <Link
                   href="#"
-                  className="block py-2 px-3 md:p-0 text-gray-900 rounded  hover:text-primary"
+                  className="block py-2 px-3 md:p-0 text-gray-900 rounded  hover:text-primary p-bold-20"
                 >
                   Reviews
                 </Link>
@@ -94,7 +94,7 @@ const Navbar = () => {
               <li>
                 <Link
                   href="#"
-                  className="block py-2 px-3 md:p-0 text-gray-900 rounded  hover:text-primary"
+                  className="block py-2 px-3 md:p-0 text-gray-900 rounded  hover:text-primary p-bold-20"
                 >
                   Footer
                 </Link>

@@ -19,11 +19,11 @@ const Footer = () => {
           </div> */}
             <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-32 z-10 ">
               <div className="mt-2 max-w-md text-center leading-relaxed text-white sm:max-w-xs sm:text-left">
-                <p className="text-text-white max-sm:text-left text-2xl font-semibold ">
+                <p className="text-text-white max-sm:text-left h3-bold ">
                   ROMMIECONNECTS
                 </p>
 
-                <p className="mt-4  text-white lg:text-left md:w-[500px] sm:w-full text-start font-light">
+                <p className="mt-4  text-text_white lg:text-left md:w-[500px] sm:w-full text-start p-regular-14">
                   Your No#1 Platform for finding real reviews. We believe in
                   real voices, genuine experiences, and the power of making
                   smart decisions. Benefit yourself by going deeper, discover
@@ -48,7 +48,7 @@ const Footer = () => {
                         href="#"
                         rel="noreferrer"
                         target="_blank"
-                        className="text-white  transition hover:opacity-75 text-lg max-sm:text-sm"
+                        className="text-white  transition hover:opacity-75 p-regular-18 "
                       >
                         <span className="sr-only">Twitter</span>
 
@@ -69,7 +69,7 @@ const Footer = () => {
                         href="#"
                         rel="noreferrer"
                         target="_blank"
-                        className="text-white  transition hover:opacity-75 text-lg max-sm:text-sm"
+                        className="text-white  transition hover:opacity-75 p-regular-18 "
                       >
                         <span className="sr-only">Facebook</span>
 
@@ -94,7 +94,7 @@ const Footer = () => {
                         href="#"
                         rel="noreferrer"
                         target="_blank"
-                        className="text-white  transition hover:opacity-75 text-lg max-sm:text-sm"
+                        className="text-white  transition hover:opacity-75 p-regular-18 "
                       >
                         <span className="sr-only">Instagram</span>
 
@@ -117,13 +117,13 @@ const Footer = () => {
               </div>
               <div className="grid grid-cols-1 gap-8  lg:grid-cols-3 lg:text-left">
                 <div>
-                  <p className=" text-white font-bold text-lg">Home</p>
+                  <p className=" text-white p-semibold-20">Home</p>
 
                   <ul className="mt-6 space-y-4 text-sm">
                     <li>
                       <a
                         href="#"
-                        className="text-white  transition hover:opacity-75 text-lg max-sm:text-sm"
+                        className="text-white  transition hover:opacity-75 p-regular-18 "
                       >
                         Services
                       </a>
@@ -132,7 +132,7 @@ const Footer = () => {
                     <li>
                       <a
                         href="#"
-                        className="text-white  transition hover:opacity-75 text-lg max-sm:text-sm"
+                        className="text-white  transition hover:opacity-75 p-regular-18 "
                       >
                         About Us
                       </a>
@@ -141,7 +141,7 @@ const Footer = () => {
                     <li>
                       <a
                         href="#"
-                        className="text-white  transition hover:opacity-75 text-lg max-sm:text-sm"
+                        className="text-white  transition hover:opacity-75 p-regular-18 "
                       >
                         FAQ
                       </a>
@@ -150,7 +150,7 @@ const Footer = () => {
                     <li>
                       <a
                         href="#"
-                        className="text-white  transition hover:opacity-75 text-lg max-sm:text-sm"
+                        className="text-white  transition hover:opacity-75 p-regular-18 "
                       >
                         pricing
                       </a>
@@ -159,7 +159,7 @@ const Footer = () => {
                     <li>
                       <a
                         href="#"
-                        className="text-white  transition hover:opacity-75 text-lg max-sm:text-sm"
+                        className="text-white  transition hover:opacity-75 p-regular-18 "
                       >
                         Contact
                       </a>
@@ -168,13 +168,13 @@ const Footer = () => {
                 </div>
 
                 <div>
-                  <p className=" text-white font-bold text-lg">About</p>
+                  <p className=" text-white p-semibold-20">About</p>
 
                   <ul className="mt-6 space-y-4 text-sm">
                     <li>
                       <a
                         href="#"
-                        className="text-white  transition hover:opacity-75 text-lg max-sm:text-sm"
+                        className="text-white  transition hover:opacity-75 p-regular-18 "
                       >
                         How it work
                       </a>
@@ -183,7 +183,7 @@ const Footer = () => {
                     <li>
                       <a
                         href="#"
-                        className="text-white  transition hover:opacity-75 text-lg max-sm:text-sm"
+                        className="text-white  transition hover:opacity-75 p-regular-18 "
                       >
                         Why Us
                       </a>
@@ -192,7 +192,7 @@ const Footer = () => {
                     <li>
                       <a
                         href="#"
-                        className="text-white  transition hover:opacity-75 text-lg max-sm:text-sm"
+                        className="text-white  transition hover:opacity-75 p-regular-18 "
                       >
                         Testimonials
                       </a>
@@ -201,13 +201,13 @@ const Footer = () => {
                 </div>
 
                 <div>
-                  <p className=" text-white font-bold text-lg">Services</p>
+                  <p className=" text-white p-semibold-20">Services</p>
 
                   <ul className="mt-6 space-y-4 ">
                     <li>
                       <a
                         href="#"
-                        className="text-white  transition hover:opacity-75 text-lg max-sm:text-sm"
+                        className="text-white  transition hover:opacity-75 p-regular-18 "
                       >
                         Room
                       </a>
@@ -216,7 +216,7 @@ const Footer = () => {
                     <li>
                       <a
                         href="#"
-                        className="text-white  transition hover:opacity-75 text-lg max-sm:text-sm"
+                        className="text-white  transition hover:opacity-75 p-regular-18 "
                       >
                         Car
                       </a>
@@ -225,7 +225,7 @@ const Footer = () => {
                     <li>
                       <a
                         href="#"
-                        className="text-white  transition hover:opacity-75 text-lg max-sm:text-sm"
+                        className="text-white  transition hover:opacity-75 p-regular-18 "
                       >
                         Restaurants
                       </a>
@@ -233,7 +233,7 @@ const Footer = () => {
                     <li>
                       <a
                         href="#"
-                        className="text-white  transition hover:opacity-75 text-lg max-sm:text-sm"
+                        className="text-white  transition hover:opacity-75 p-regular-18 "
                       >
                         Boat/Jet Skiing
                       </a>
@@ -241,7 +241,7 @@ const Footer = () => {
                     <li>
                       <a
                         href="#"
-                        className="text-white  transition hover:opacity-75 text-lg max-sm:text-sm"
+                        className="text-white  transition hover:opacity-75 p-regular-18 "
                       >
                         Flight
                       </a>
@@ -256,7 +256,7 @@ const Footer = () => {
 
       <div className="max-w-screen-2xl m-auto py-4 max-sm:flex-col max-sm:px-4">
         <div className="text-center flex justify-between max-sm:flex-col">
-          <div className=" font-semibold text-white md:gap-10 flex justify-between max-sm:flex-col max-sm:text-left">
+          <div className=" p-semibold-18 text-white md:gap-10 flex justify-between max-sm:flex-col max-sm:text-left">
             <Link
               className="inline-block text-primary  transition hover:text-primary/75 "
               href="#"
@@ -271,7 +271,7 @@ const Footer = () => {
               Privacy Policy
             </Link>
           </div>
-          <div className=" font-semibold text-white flex justify-between">
+          <div className="p-semibold-18 text-white flex justify-between">
             <Link
               className="inline-block text-primary  transition hover:text-primary/75 "
               href="#"
