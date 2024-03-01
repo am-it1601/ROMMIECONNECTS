@@ -20,12 +20,16 @@ import {
   ChevronRight,
   Gem,
   Heart,
+  HomeIcon,
   Lightbulb,
   MapPin,
   MapPinned,
   ShieldCheck,
   Star,
 } from "lucide-react";
+import { CustomSelect, DatePickerDemo } from "./client";
+import Home from "../page";
+import { Button } from "@/components/ui/button";
 export function CustomButton() {
   const [activeButton, setActiveButton] = useState(null);
 
@@ -64,35 +68,26 @@ export function CustomButton() {
 
 export function CustomSearchButton() {
   return (
-    <div className="flex items-center justify-between gap-4 px-4 w-full  ">
+    <div className="flex items-center justify-between gap-4 px-10 w-full ">
       <div className="flex gap-4">
-        <div className=" border-r-2 border-gray-300">
-          <input
-            type="text"
-            placeholder="select"
-            className=" p-3 focus:outline-none "
-          />
+        <div className=" flex items-center gap-2 border-r-2 ">
+          <HomeIcon size={25} />
+          <CustomSelect />
         </div>
-        <div className=" border-r-2 border-gray-300">
+        <div className=" border-r-2 border-gray-300 flex items-center gap-2">
+          <MapPin size={25} />
+
           <input
             type="text"
             placeholder="search for location"
             className=" p-3 focus:outline-none"
           />
         </div>
-        <div className=" border-r-2 border-gray-300">
-          <input
-            type="date"
-            placeholder="search for date"
-            className=" p-3 focus:outline-none"
-          />
-        </div>
+        <DatePickerDemo />
       </div>
-      <div>
-        <button className="text-white bg-primary font-medium py-2 px-5 text-2xl rounded-full ">
-          search
-        </button>
-      </div>
+      <Button className="text-white bg-primary font-medium py-2 px-5 text-2xl rounded-full ">
+        search
+      </Button>
     </div>
   );
 }
@@ -366,7 +361,7 @@ export const ThreeCols = ({ img }: any) => {
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 relative">
-        <div className="col-span-1 md:col-span-2 lg:col-span-1 bg-white   p-6 h-[200px] card rounded-md overflow-hidden">
+        <div className="col-span-1 md:col-span-2 lg:col-span-1 bg-white   p-6 h-[200px]  card rounded-md overflow-hidden">
           <div className="flex items-center justify-between relative hoverImg">
             <div className="flex flex-col gap-y-3">
               <span>
@@ -384,7 +379,7 @@ export const ThreeCols = ({ img }: any) => {
           </p>
         </div>
 
-        <div className="col-span-1 md:col-span-2 lg:col-span-1   p-6 h-[200px] card rounded-md overflow-hidden text-white">
+        <div className="col-span-1 md:col-span-2 lg:col-span-1   p-6 h-[200px]  card rounded-md overflow-hidden text-white">
           <div className="flex items-center justify-between relative">
             <div className="flex flex-col gap-y-3">
               <span>
@@ -401,7 +396,7 @@ export const ThreeCols = ({ img }: any) => {
             varius pretium orci a aliquet.
           </p>
         </div>
-        <div className="col-span-1 md:col-span-2 lg:col-span-1 p-6 h-[200px] card rounded-md overflow-hidden transition-all duration-300 ease-in-out ">
+        <div className="col-span-1 md:col-span-2 lg:col-span-1 p-6 h-[200px]  card rounded-md overflow-hidden transition-all duration-300 ease-in-out ">
           <div className="flex items-center justify-between relative">
             <div className="flex flex-col gap-y-3">
               <span>
@@ -418,7 +413,7 @@ export const ThreeCols = ({ img }: any) => {
             varius pretium orci a aliquet.
           </p>
         </div>
-        <div className="col-span-1 md:col-span-2 lg:col-span-1 p-6 h-[200px] card  rounded-md overflow-hidden transition-all duration-300 ease-in-out ">
+        <div className="col-span-1 md:col-span-2 lg:col-span-1 p-6 h-[200px]  card  rounded-md overflow-hidden transition-all duration-300 ease-in-out ">
           <div className="flex items-center justify-between relative ">
             <div className="flex flex-col gap-y-3">
               <span>
@@ -435,7 +430,7 @@ export const ThreeCols = ({ img }: any) => {
             varius pretium orci a aliquet.
           </p>
         </div>
-        <div className="col-span-1 md:col-span-2 lg:col-span-1 p-6 h-[200px] card rounded-md overflow-hidden transition-all duration-300 ease-in-out ">
+        <div className="col-span-1 md:col-span-2 lg:col-span-1 p-6 h-[200px]  card rounded-md overflow-hidden transition-all duration-300 ease-in-out ">
           <div className="flex items-center justify-between relative">
             <div className="flex flex-col gap-y-3">
               <span>
@@ -452,7 +447,7 @@ export const ThreeCols = ({ img }: any) => {
             varius pretium orci a aliquet.
           </p>
         </div>
-        <div className="col-span-1 md:col-span-2 lg:col-span-1 p-6 h-[200px] card rounded-md overflow-hidden transition-all duration-300 ease-in-out ">
+        <div className="col-span-1 md:col-span-2 lg:col-span-1 p-6 h-[200px]  card rounded-md overflow-hidden transition-all duration-300 ease-in-out ">
           <div className="flex items-center justify-between relative">
             <div className="flex flex-col gap-y-3">
               <span>

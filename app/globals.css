@@ -423,6 +423,7 @@ article.nextSlide {
   background-color: white; /* Initial background color */
   color: black; /* Initial text color */
   transition: color 0.3s ease-in-out; /* Transition text color */
+  border-radius: 10px !important;
 }
 
 .card:hover {

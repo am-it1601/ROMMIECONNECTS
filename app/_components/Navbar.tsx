@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import { UserButton } from "@clerk/nextjs";
 import { auth } from "@clerk/nextjs/server";
 import Link from "next/link";
@@ -25,9 +26,9 @@ const Navbar = () => {
                 >
                   Log In
                 </button>
-                <button className="cursor-pointer inline-flex items-center rounded-full px-4 py-2 text-sm font-semibold text-white bg-primary max-sm:text-xs">
+                <Button className="cursor-pointer inline-flex items-center rounded-full px-4 py-2 text-sm font-semibold text-white bg-primary max-sm:text-xs">
                   Join Now
-                </button>
+                </Button>
               </Link>
             )}
             {userId && (

@@ -1,19 +1,18 @@
+import { Button } from "@/components/ui/button";
+import { AlertOctagon, ArrowRight } from "lucide-react";
 import Image from "next/image";
-import Navbar from "./_components/Navbar";
-import Footer from "./_components/footer";
-import img from "../public/img.jpeg";
+import apple from "../public/apple.webp";
+import banner from "../public/banner.png";
 import hero1 from "../public/hero1.png";
 import hero2 from "../public/hero2.png";
 import hero3 from "../public/hero3.png";
 import hero4 from "../public/hero4.png";
 import hero5 from "../public/hero5.png";
 import hero6 from "../public/hero6.png";
-import banner from "../public/banner.png";
-import banner2 from "../public/banner2.png";
-import apple from "../public/apple.webp";
+import Navbar from "./_components/Navbar";
+import Footer from "./_components/footer";
 import {
   CustomBanner,
-  CustomBoat,
   CustomButton,
   CustomHousingGrid,
   CustomSearchButton,
@@ -21,7 +20,6 @@ import {
   ThreeCols,
   TopButton,
 } from "./_components/shared";
-import { AlertOctagon, ArrowRight } from "lucide-react";
 import { Slider } from "./_components/slider/slider";
 
 export default function Home() {
@@ -39,14 +37,12 @@ export default function Home() {
               <span className="text-primary">RoomieConnects!</span>
             </span>
           </div>
-          <div className=" bg-transparent absolute z-10 bottom-24 left-[15%] max-sm:left-0 max-sm:hidden ">
+          <div className=" bg-transparent absolute z-10 bottom-24 left-[50%] top[50%] min-w-[70%] -translate-x-1/2  max-sm:left-0 max-sm:hidden ">
             <div className="flex gap-4 items-center justify-between ">
               <CustomButton />
             </div>
           </div>
-          <div className=" absolute bottom-0 flex items-center justify-between  left-[50%] top[50%] w-[65%] max-sm:hidden  md:flex-wrap md:translate-y-3/4 md:gap-5  -translate-x-1/2 -translate-y-1/2 z-20  bg-white rounded-full py-4 px-2 shadow-lg">
-            <CustomSearchButton />
-          </div>
+
           <div className="grid grid-cols-3 auto-rows-[200px] max-sm:grid-rows-4">
             <div className="row-span-2">
               <Image
@@ -91,6 +87,9 @@ export default function Home() {
               />
             </div>
           </div>
+          <div className=" absolute bottom-0 flex items-center justify-between  left-[50%] top[50%] min-w-[70%] max-sm:hidden  md:flex-wrap md:translate-y-3/4 md:gap-5  -translate-x-1/2 -translate-y-1/2 z-20  bg-white rounded-full py-4 px-2 shadow-lg">
+            <CustomSearchButton />
+          </div>
         </div>
 
         <div className="mt-[100px] flex items-center justify-center gap-4 max-w-screen-2xl m-auto max-sm:hidden ">
@@ -108,9 +107,9 @@ export default function Home() {
               Karachi, Pakistan
             </span>
           </div>
-          <span className="bg-primary p-2 rounded-full ">
-            <ArrowRight color="white" />
-          </span>
+          <Button className="bg-primary p-2 rounded-full  duration-75 transition-all ease-in-out">
+            <ArrowRight className="text-white" />
+          </Button>
         </div>
 
         <section className="p-3 mt-10 mb-10 max-w-screen-2xl m-auto">
@@ -231,7 +230,7 @@ export default function Home() {
         </div>
       </section>
       <TopButton />
-
+      {/* <Button>Button</Button> */}
       <Footer />
     </>
   );
