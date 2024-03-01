@@ -48,14 +48,14 @@ export const Slider = () => {
             return (
               <article className={`${position}`} key={id}>
                 <h4>{name}</h4>
-                <p className="title">{title}</p>
+                <p className="title p-regular-16">{title}</p>
                 <p className="text">{quote}</p>
-                <div className="rounded-full relative left-[50%] -translate-x-1/2 translate-y-[20px] bottom-0 object-fill ">
-                  <div className="bg-white h-[120px] w-[120px] overflow-hidden rounded-full m-auto">
+                <div className="rounded-full relative left-[50%] -translate-x-1/2 translate-y-[20px] bottom-0 object-fill max-sm:hidden  ">
+                  <div className="  border-2 bottom-1 h-[120px] w-[120px] overflow-hidden rounded-full m-auto border-bg_color bottom-1-pr">
                     <img
                       src={image}
                       alt="img"
-                      className="h-full w-full object-cover overflow-hidden"
+                      className="h-full w-full rounded-full object-cover overflow-hidden"
                     />
                   </div>
                 </div>

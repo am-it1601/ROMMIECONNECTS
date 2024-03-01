@@ -20,10 +20,16 @@ import {
   ChevronRight,
   Gem,
   Heart,
+  HomeIcon,
   Lightbulb,
+  MapPin,
   MapPinned,
   ShieldCheck,
+  Star,
 } from "lucide-react";
+import { CustomSelect, DatePickerDemo } from "./client";
+import Home from "../page";
+import { Button } from "@/components/ui/button";
 export function CustomButton() {
   const [activeButton, setActiveButton] = useState(null);
 
@@ -46,7 +52,7 @@ export function CustomButton() {
       {buttons.map((button, index) => (
         <button
           key={button.title}
-          className={` text-white font-bold py-2 px-5 text-2xl rounded-full  ${
+          className={` text-white font-bold py-2 px-5  p-bold-24 rounded-full  ${
             activeButton === index ? "bg-primary" : ""
           }`}
           onClick={() => handleClick(index)}
@@ -62,35 +68,26 @@ export function CustomButton() {
 
 export function CustomSearchButton() {
   return (
-    <div className="flex items-center justify-between gap-4 px-4 w-full ">
+    <div className="flex items-center justify-between gap-4 px-10 w-full ">
       <div className="flex gap-4">
-        <div className=" border-r-2 border-gray-300">
-          <input
-            type="text"
-            placeholder="select"
-            className=" p-3 focus:outline-none "
-          />
+        <div className=" flex items-center gap-2 border-r-2 ">
+          <HomeIcon size={25} />
+          <CustomSelect />
         </div>
-        <div className=" border-r-2 border-gray-300">
+        <div className=" border-r-2 border-gray-300 flex items-center gap-2">
+          <MapPin size={25} />
+
           <input
             type="text"
             placeholder="search for location"
             className=" p-3 focus:outline-none"
           />
         </div>
-        <div className=" border-r-2 border-gray-300">
-          <input
-            type="date"
-            placeholder="search for date"
-            className=" p-3 focus:outline-none"
-          />
-        </div>
+        <DatePickerDemo />
       </div>
-      <div>
-        <button className="text-white bg-primary font-medium py-2 px-5 text-2xl rounded-full ">
-          search
-        </button>
-      </div>
+      <Button className="text-white bg-primary font-medium py-2 px-5 text-2xl rounded-full ">
+        search
+      </Button>
     </div>
   );
 }
@@ -105,7 +102,12 @@ export const ProductCard = ({ img }: any) => {
         className="h-[300px] w-full rounded-lg overflow-hidden object-cover"
       />
       <div className="bg-white">
-        <p>location</p>
+        <div className="flex items-start justify-start gap-2 py-2">
+          <p className="mt-1 ">
+            <MapPin size={18} />
+          </p>
+          <p className="p-regular-18 text-text_secondary ">Karachi, Pakistan</p>
+        </div>
         <a href="#">
           <h3 className="mt-0.5 text-xl text-gray-900 font-semibold">
             Roommate
@@ -121,9 +123,154 @@ export const ProductCard = ({ img }: any) => {
 export function CustomHousingGrid() {
   return (
     <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
-      {[hero1, hero2, hero3, hero4].map((img, index) => {
-        return <ProductCard key={index} img={img} />;
-      })}
+      <div>
+        <Image
+          src={hero1}
+          alt="img"
+          className="h-[300px] w-full rounded-lg overflow-hidden object-cover"
+        />
+        <div className="bg-white">
+          <div className="flex items-start justify-start gap-2 py-2">
+            <p className="mt-1 ">
+              <MapPin size={18} />
+            </p>
+            <p className="p-regular-18 text-text_secondary ">
+              Karachi, Pakistan
+            </p>
+          </div>
+          <a href="#">
+            <h3 className="mt-0.5  text-gray-900 p-bold-24 ">Roommate</h3>
+          </a>
+          <p className="mt-2 line-clamp-3 text-sm/relaxed text-text_secondary p-regular-18 ">
+            2 Bedrooms | 2 Bathrooms | 1 Garden
+          </p>
+          <div className=" py-2 flex gap-1 items-center justify-start mt-2">
+            {[1, 2, 3, 4, 5].map((item, index) => {
+              return (
+                <Star
+                  key={index}
+                  size={18}
+                  fill="#FFD600"
+                  color="#FFD600"
+                  className="border border-none"
+                />
+              );
+            })}
+          </div>
+        </div>
+      </div>{" "}
+      <div>
+        <Image
+          src={hero1}
+          alt="img"
+          className="h-[300px] w-full rounded-lg overflow-hidden object-cover"
+        />
+        <div className="bg-white">
+          <div className="flex items-start justify-start gap-2 py-2  ">
+            <p className="mt-1 ">
+              <MapPin size={18} />
+            </p>
+            <p className="p-regular-18 text-text_secondary ">
+              Karachi, Pakistan
+            </p>
+          </div>
+          <a href="#">
+            <h3 className="mt-0.5  text-gray-900 p-bold-24">
+              Student Shared housing
+            </h3>
+          </a>
+          <p className="mt-2 line-clamp-3 text-sm/relaxed text-text_secondary p-regular-18 ">
+            2 Bedrooms | 2 Bathrooms | 1 Garden
+          </p>
+          <div className=" py-2 flex gap-1 items-center justify-start mt-2">
+            {[1, 2, 3, 4, 5].map((item, index) => {
+              return (
+                <Star
+                  key={index}
+                  size={18}
+                  fill="#FFD600"
+                  color="#FFD600"
+                  className="border border-none"
+                />
+              );
+            })}
+          </div>
+        </div>
+      </div>{" "}
+      <div>
+        <Image
+          src={hero1}
+          alt="img"
+          className="h-[300px] w-full rounded-lg overflow-hidden object-cover"
+        />
+        <div className="bg-white">
+          <div className="flex items-start justify-start gap-2 py-2">
+            <p className="mt-1 ">
+              <MapPin size={18} />
+            </p>
+            <p className="p-regular-18 text-text_secondary ">
+              Karachi, Pakistan
+            </p>
+          </div>
+          <a href="#">
+            <h3 className="mt-0.5  text-gray-900  p-bold-24">
+              Corporate housing
+            </h3>
+          </a>
+          <p className="mt-2 line-clamp-3 text-sm/relaxed text-text_secondary p-regular-18 ">
+            2 Bedrooms | 2 Bathrooms | 1 Garden
+          </p>
+          <div className=" py-2 flex gap-1 items-center justify-start mt-2">
+            {[1, 2, 3, 4, 5].map((item, index) => {
+              return (
+                <Star
+                  key={index}
+                  size={18}
+                  fill="#FFD600"
+                  color="#FFD600"
+                  className="border border-none"
+                />
+              );
+            })}
+          </div>
+        </div>
+      </div>{" "}
+      <div>
+        <Image
+          src={hero1}
+          alt="img"
+          className="h-[300px] w-full rounded-lg overflow-hidden object-cover"
+        />
+        <div className="bg-white">
+          <div className="flex items-start justify-start gap-2 py-2">
+            <p className="mt-1 ">
+              <MapPin size={18} />
+            </p>
+            <p className="p-regular-18 text-text_secondary ">
+              Karachi, Pakistan
+            </p>
+          </div>
+          <a href="#">
+            <h3 className="mt-0.5 p-bold-24 text-gray-900">Military housing</h3>
+          </a>
+          <p className="mt-2 line-clamp-3 text-sm/relaxed text-text_secondary p-regular-18 ">
+            2 Bedrooms | 2 Bathrooms | 1 Garden
+          </p>
+          <div className=" py-2 flex gap-1 items-center justify-start mt-2">
+            {[1, 2, 3, 4, 5].map((item, index) => {
+              return (
+                <Star
+                  key={index}
+                  size={18}
+                  fill="#FFD600"
+                  color="#FFD600"
+                  className="border border-none"
+                />
+              );
+            })}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
@@ -147,11 +294,11 @@ export function CustomBanner({ img }: any) {
         className="h-[320px] w-full rounded-lg overflow-hidden object-cover"
       />
       <div className="absolute top-0 bottom-0 left-0 right-0 flex items-center justify-between px-6 max-sm:flex-col max-md:flex-col max-sm:p-4 max-sm:justify-around">
-        <p className="text-white text-3xl max-sm:text-sm ">
+        <p className="text-white h3-bold max-sm:text-sm ">
           List your House on <br /> RoomiConnects and open <br /> your door to
           rental income
         </p>
-        <button className="cursor-pointer inline-flex items-center rounded-full px-6 py-2 text-lg font-semibold text-white bg-primary max-sm:text-xs">
+        <button className="cursor-pointer inline-flex items-center rounded-full px-6 py-2 p-semibold-20 text-white bg-primary ">
           List your House
         </button>
       </div>
@@ -168,7 +315,7 @@ export const GridTemplate = () => {
           alt="img"
           className="h-full w-full rounded-lg overflow-hidden object-cover "
         />
-        <p className="text-center py-1">Roommates </p>
+        <p className="text-center p-semibold-18   py-1">Roommates </p>
       </div>
       <div className="md:col-span-2  bg-white p-6 md:row-span-6 rounded-sm">
         <Image
@@ -176,7 +323,7 @@ export const GridTemplate = () => {
           alt="img"
           className="h-full w-full object-cover overflow-hidden rounded-md"
         />
-        <p className="text-center py-1 text-2xl font-semibold">
+        <p className="text-center h4-medium py-1 text-2xl font-semibold">
           Vacation Rentals{" "}
         </p>
       </div>
@@ -186,7 +333,9 @@ export const GridTemplate = () => {
           alt="img"
           className="h-full w-full object-cover overflow-hidden rounded-md"
         />
-        <p className="text-center py-1">Student Shared housing </p>
+        <p className="text-center p-semibold-18  py-1">
+          Student Shared housing{" "}
+        </p>
       </div>
       <div className="md:row-span-3 md:row-start-4 rounded-sm">
         <Image
@@ -194,7 +343,7 @@ export const GridTemplate = () => {
           alt="img"
           className="h-full w-full object-cover overflow-hidden rounded-md"
         />
-        <p className="text-center py-1">Military housing </p>
+        <p className="text-center p-semibold-18  py-1">Military housing </p>
       </div>
       <div className="md:row-span-3 md:col-start-4 md:row-start-4 rounded-sm">
         <Image
@@ -202,7 +351,7 @@ export const GridTemplate = () => {
           alt="img"
           className="h-full w-full object-cover overflow-hidden rounded-md"
         />
-        <p className="text-center py-1">Corporate housing </p>
+        <p className="text-center p-semibold-18  py-1">Corporate housing </p>
       </div>
     </div>
   );
@@ -212,104 +361,105 @@ export const ThreeCols = ({ img }: any) => {
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 relative">
-        <div className="col-span-1 md:col-span-2 lg:col-span-1 bg-white hover:bg-hover transition-colors duration-300 ease-in-out p-6 h-[200px] rounded-md overflow-hidden">
-          <div className="flex items-center justify-between  relative">
+        <div className="col-span-1 md:col-span-2 lg:col-span-1 bg-white   p-6 h-[200px]  card rounded-md overflow-hidden">
+          <div className="flex items-center justify-between relative hoverImg">
             <div className="flex flex-col gap-y-3">
               <span>
                 <Heart color="#FF6522" fill="#FF6522" size={30} />
               </span>
-              <p className="text-lg font-semibold">Comfortable</p>
+              <p className="p-medium-20">Comfortable</p>
             </div>
-            <span className="text-gray-400 text-3xl font-semibold absolute right-0 top-0">
+            <span className="text-gray-400 text-3xl font-semibold absolute right-0 top-0 h4-medium">
               01
             </span>
           </div>
-          <p className=" text-gray-300 my-5">
+          <p className="text-gray-300 my-5">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
             varius pretium orci a aliquet.
           </p>
         </div>
-        <div className="col-span-1 md:col-span-2 lg:col-span-1 hover:text-white bg-white hover:bg-hover2 p-6 h-[200px] rounded-md overflow-hidden">
+
+        <div className="col-span-1 md:col-span-2 lg:col-span-1   p-6 h-[200px]  card rounded-md overflow-hidden text-white">
           <div className="flex items-center justify-between relative">
             <div className="flex flex-col gap-y-3">
               <span>
                 <ShieldCheck color="#FF6522" size={30} />
               </span>
-              <p className="text-lg font-semibold ">Extra security</p>
+              <p className="p-medium-20 ">Extra security</p>
             </div>
-            <span className="text-gray-400 text-3xl font-semibold right-0 top-0 absolute">
+            <span className="text-gray-400 text-3xl font-semibold right-0 top-0 absolute h4-medium">
               02
             </span>
           </div>
-          <p className=" text-gray-300 my-5">
+          <p className=" text-text_secondary  my-5 p-regular-16">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
             varius pretium orci a aliquet.
           </p>
         </div>
-        <div className="col-span-1 md:col-span-2 lg:col-span-1 bg-white p-6 h-[200px] rounded-md overflow-hidden">
+        <div className="col-span-1 md:col-span-2 lg:col-span-1 p-6 h-[200px]  card rounded-md overflow-hidden transition-all duration-300 ease-in-out ">
           <div className="flex items-center justify-between relative">
             <div className="flex flex-col gap-y-3">
               <span>
                 <Gem color="#FF6522" size={30} />
               </span>
-              <p className="text-lg font-semibold">Luxury</p>
+              <p className="p-medium-20">Luxury</p>
             </div>
-            <span className="text-gray-400 text-3xl font-semibold right-0 top-0 absolute">
+            <span className="text-gray-400 text-3xl font-semibold right-0 top-0 absolute h4-medium">
               03
             </span>
           </div>
-          <p className=" text-gray-300 my-5">
+          <p className=" text-text_secondary my-5 p-regular-16">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
             varius pretium orci a aliquet.
           </p>
         </div>
-        <div className="col-span-1 md:col-span-2 lg:col-span-1 bg-white p-6 h-[200px] rounded-md overflow-hidden">
-          <div className="flex items-center justify-between relative">
+        <div className="col-span-1 md:col-span-2 lg:col-span-1 p-6 h-[200px]  card  rounded-md overflow-hidden transition-all duration-300 ease-in-out ">
+          <div className="flex items-center justify-between relative ">
             <div className="flex flex-col gap-y-3">
               <span>
                 <BadgePercent color="#FF6522" size={30} />
               </span>
-              <p className="text-lg font-semibold">Best price</p>
+              <p className="p-medium-20 ">Best price</p>
             </div>
-            <span className="text-gray-400 text-3xl font-semibold right-0 top-0 absolute">
+            <span className="text-gray-400 text-3xl font-semibold right-0 top-0 absolute h4-medium">
               04
             </span>
           </div>
-          <p className=" text-gray-300 my-5">
+          <p className=" text-text_secondary my-5 p-regular-16">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
             varius pretium orci a aliquet.
           </p>
         </div>
-        <div className="col-span-1 md:col-span-2 lg:col-span-1 bg-white p-6 h-[200px] rounded-md overflow-hidden">
+        <div className="col-span-1 md:col-span-2 lg:col-span-1 p-6 h-[200px]  card rounded-md overflow-hidden transition-all duration-300 ease-in-out ">
           <div className="flex items-center justify-between relative">
             <div className="flex flex-col gap-y-3">
               <span>
                 <MapPinned color="#FF6522" size={30} />
               </span>
-              <p className="text-lg font-semibold">Strategic location</p>
+              <p className="p-medium-20">Strategic location</p>
             </div>
-            <span className="text-gray-400 text-3xl font-semibold right-0 top-0 absolute">
+            <span className="text-gray-400 text-3xl font-semibold right-0 top-0 absolute h4-medium">
               05
             </span>
           </div>
-          <p className=" text-gray-300 my-5">
+          <p className=" text-text_secondary my-5 p-regular-16">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
             varius pretium orci a aliquet.
           </p>
         </div>
-        <div className="col-span-1 md:col-span-2 lg:col-span-1 bg-white p-6 h-[200px] rounded-md overflow-hidden">
+        <div className="col-span-1 md:col-span-2 lg:col-span-1 p-6 h-[200px]  card rounded-md overflow-hidden transition-all duration-300 ease-in-out ">
           <div className="flex items-center justify-between relative">
             <div className="flex flex-col gap-y-3">
               <span>
                 <Lightbulb color="#FF6522" fill="#FF6522" size={30} />
               </span>
-              <p className="text-lg font-semibold">Efficient</p>
+              <p className="p-medium-20">Efficient</p>
             </div>
-            <span className="text-gray-400 text-3xl font-semibold right-0 top-0 absolute">
+            <span className="text-gray-400 text-3xl font-semibold right-0 top-0 absolute h4-medium">
               06
             </span>
           </div>
-          <p className=" text-gray-300 my-5">
+          <p className=" text-text_secondary my-5 p-regular-16">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
             varius pretium orci a aliquet.
           </p>
@@ -349,7 +499,7 @@ export const TopButton = () => {
   return (
     <button
       onClick={scrollToTop}
-      className={`fixed right-14 z-50 bottom-16 bg-white px-3 py-4 rounded-lg shadow-lg ${
+      className={`fixed right-14 z-50 bottom-16 bg-white px-2 py-3 rounded-lg shadow-lg ${
         isVisible ? "block" : "hidden"
       }`}
     >
