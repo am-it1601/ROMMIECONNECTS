@@ -26,6 +26,7 @@ const config = {
         text_secondary:"#AAAAAA",
         star_color:"#FFD600",
         text_light_black:'#0F2137',
+        bg_color:"#034679",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
