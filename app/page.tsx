@@ -27,6 +27,7 @@ export default function Home() {
   return (
     <>
       <div className="">
+        {/* navbar */}
         <Navbar />
         <div className="relative w-full">
           <div className="absolute flex flex-col top-[40%] left-[50%] md:text-wrap gap-5 leading-snug  text-center text-white  transform -translate-x-[50%]  text-wrap ">
