@@ -97,10 +97,10 @@ export const Slider = () => {
           ))}
         </div>
         <button className="prev" onClick={() => setIndex(index - 1)}>
-          <ChevronLeft />
+          <ChevronLeft className="icon" />
         </button>
         <button className="next" onClick={() => setIndex(index + 1)}>
-          <ChevronRight />
+          <ChevronRight className="icon" />
         </button>
       </div>
     </section>

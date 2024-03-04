@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { AlertOctagon, ArrowRight } from "lucide-react";
 import Image from "next/image";
-import apple from "../public/apple.webp";
+import apple from "../public/apple.png";
 import banner from "../public/banner.png";
 import hero1 from "../public/hero1.png";
 import hero2 from "../public/hero2.png";
@@ -9,6 +9,7 @@ import hero3 from "../public/hero3.png";
 import hero4 from "../public/hero4.png";
 import hero5 from "../public/hero5.png";
 import hero6 from "../public/hero6.png";
+import play from "../public/play1.webp";
 import Navbar from "./_components/Navbar";
 import Footer from "./_components/footer";
 import {
@@ -38,11 +39,11 @@ export default function Home() {
               <span className="text-primary">RoomieConnects!</span>
             </span>
           </div>
-          <div className=" bg-transparent absolute z-10 bottom-24 left-[50%] top[50%] min-w-[70%] -translate-x-1/2  max-sm:left-0 max-sm:hidden ">
+          {/* <div className=" bg-transparent absolute z-10 bottom-24 left-[50%] top[50%] min-w-[70%] -translate-x-1/2  max-sm:left-0 max-sm:hidden ">
             <div className="flex gap-4 items-center justify-between ">
               <CustomButton />
             </div>
-          </div>
+          </div> */}
 
           <div className="grid grid-cols-3 auto-rows-[200px] max-sm:grid-rows-4">
             <div className="row-span-2">
@@ -88,23 +89,35 @@ export default function Home() {
               />
             </div>
           </div>
-          <div className=" absolute bottom-0 flex items-center justify-between  left-[50%] top[50%] min-w-[70%] max-sm:hidden  md:flex-wrap md:translate-y-3/4 md:gap-5  -translate-x-1/2 -translate-y-1/2 z-20  bg-white rounded-full py-4 px-2 shadow-lg">
+          <div className=" absolute md:-bottom-[40px] -bottom-[124px] flex items-center justify-between  left-[50%] top[50%] min-w-[75%]  md:flex-wrap  md:gap-5  -translate-x-1/2  z-20  bg-white md:rounded-full rounded-xl py-4 px-2 shadow-lg">
             <CustomSearchButton />
           </div>
         </div>
 
-        <div className="mt-[100px] flex items-center justify-center gap-4 max-w-screen-2xl m-auto max-sm:hidden ">
+        <div className="mt-[100px] flex items-center justify-center gap-4 max-w-screen-2xl m-auto max-sm:hidden overflow-hidden  ">
           <span className="p-bold-24 text-text_primary">
             Trending Searches :{" "}
           </span>
-          <div className="flex items-center justify-center gap-3">
-            <span className="bg-[#F5F5F5] rounded-full p-2 px-4 p-semibold-20 text-text_color">
+          <div className="flex items-center justify-start gap-3 basis-0 min-w-[50%] overflow-x-auto scroll-pb-3 no-scrollbar">
+            <span className="bg-[#F5F5F5] rounded-full p-2 px-4 p-semibold-20 text-text_color whitespace-nowrap">
               Karachi, Pakistan
             </span>
-            <span className="bg-[#F5F5F5] rounded-full p-2 px-4 p-semibold-20 text-text_color">
+            <span className="bg-[#F5F5F5] rounded-full p-2 px-4 p-semibold-20 text-text_color whitespace-nowrap">
               Karachi, Pakistan
             </span>
-            <span className="bg-[#F5F5F5] rounded-full p-2 px-4 p-semibold-20 text-text_color">
+            <span className="bg-[#F5F5F5] rounded-full p-2 px-4 p-semibold-20 text-text_color whitespace-nowrap">
+              Karachi, Pakistan
+            </span>
+            <span className="bg-[#F5F5F5] rounded-full p-2 px-4 p-semibold-20 text-text_color whitespace-nowrap">
+              Karachi, Pakistan
+            </span>
+            <span className="bg-[#F5F5F5] rounded-full p-2 px-4 p-semibold-20 text-text_color whitespace-nowrap">
+              Karachi, Pakistan
+            </span>
+            <span className="bg-[#F5F5F5] rounded-full p-2 px-4 p-semibold-20 text-text_color whitespace-nowrap">
+              Karachi, Pakistan
+            </span>
+            <span className="bg-[#F5F5F5] rounded-full p-2 px-4 p-semibold-20 text-text_color whitespace-nowrap">
               Karachi, Pakistan
             </span>
           </div>
@@ -113,12 +126,12 @@ export default function Home() {
           </Button>
         </div>
 
-        <section className="p-3 mt-10 mb-10 max-w-screen-2xl m-auto">
-          <h2 className="h2-bold my-4">Browse by Property type</h2>
+        <section className="p-3 mt-10 mb-10 max-w-screen-2xl m-auto max-sm:mt-[120px]">
+          <h2 className="h1-medium my-4">Browse by Property type</h2>
           <GridTemplate />
         </section>
         <section className="p-3 mt-20 mb-10 max-w-screen-2xl m-auto">
-          <h2 className="text-3xl font-bold my-4">Top Rated Housing </h2>
+          <h2 className="h1-medium my-4">Top Rated Housing </h2>
           <CustomHousingGrid />
         </section>
         <section className="p-3 mt-20 mb-10 max-w-screen-2xl m-auto">
@@ -127,7 +140,7 @@ export default function Home() {
 
         <div className="bg-[#FF65224D]">
           <section className="p-3 mt-10 py-16 max-w-screen-2xl m-auto ">
-            <h2 className="font-bold text-3xl  my-4 mb-10 text-center">
+            <h2 className="h1-medium  my-4 mb-10 text-center">
               Why our solution is always best
             </h2>
             <ThreeCols img={hero2} />
@@ -224,9 +237,10 @@ export default function Home() {
           <h1 className="text-4xl max-sm:text-3xl my-3 text-center  font-bold">
             Download now!
           </h1>
-          <div className="flex items-center justify-center gap-6 mt-8">
+          <div className="flex items-center justify-center gap-3 mt-8">
             <Image src={apple} alt="" width={180} height={180} />
             <Image src={apple} alt="" width={180} height={180} />
+            {/* <Image src={play} alt="" width={180} height={180} /> */}
           </div>
         </div>
       </section>

@@ -10,7 +10,7 @@ import boat3 from "../../public/boat3.png";
 import boat4 from "../../public/boat4.png";
 import banner from "../../public/banner.png";
 import Image from "next/image";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
 import { FaQuoteRight } from "react-icons/fa";
 import {
@@ -48,7 +48,7 @@ export function CustomButton() {
   };
 
   return (
-    <div className="flex gap-8 items-center justify-between">
+    <div className="flex gap-8 items-center justify-between w-full">
       {buttons.map((button, index) => (
         <button
           key={button.title}
@@ -68,13 +68,13 @@ export function CustomButton() {
 
 export function CustomSearchButton() {
   return (
-    <div className="flex items-center justify-between gap-4 px-10 w-full ">
-      <div className="flex gap-4">
-        <div className=" flex items-center gap-2 border-r-2 ">
+    <div className="flex items-center justify-between gap-4 px-10 w-full flex-wrap max-sm:p-2">
+      <div className="flex gap-4 flex-wrap ">
+        <div className=" flex items-center gap-2 border-r-2 md:w-auto w-full">
           <HomeIcon size={25} />
           <CustomSelect />
         </div>
-        <div className=" border-r-2 border-gray-300 flex items-center gap-2">
+        <div className=" border-r-2 border-gray-300 flex items-center gap-2  md:w-auto w-full">
           <MapPin size={25} />
 
           <input
@@ -83,9 +83,11 @@ export function CustomSearchButton() {
             className=" p-3 focus:outline-none"
           />
         </div>
-        <DatePickerDemo />
+        <div className=" md:w-auto w-full">
+          <DatePickerDemo />
+        </div>
       </div>
-      <Button className="text-white bg-primary font-medium py-2 px-5 text-2xl rounded-full ">
+      <Button className="text-white bg-primary p-bold-20 py-2 px-5  rounded-full   md:w-auto w-full">
         search
       </Button>
     </div>
@@ -123,7 +125,12 @@ export const ProductCard = ({ img }: any) => {
 export function CustomHousingGrid() {
   return (
     <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
-      <div>
+      <div className="relative">
+        <div className="absolute top-3 left-3 w-9 h-9 bg-white rounded-full">
+          <div className="flex items-center justify-center h-full">
+            <Heart color="#FF6522" fill="white" size={22} />
+          </div>
+        </div>
         <Image
           src={hero1}
           alt="img"
@@ -159,7 +166,12 @@ export function CustomHousingGrid() {
           </div>
         </div>
       </div>{" "}
-      <div>
+      <div className="relative">
+        <div className="absolute top-3 left-3 w-9 h-9 bg-white rounded-full">
+          <div className="flex items-center justify-center h-full">
+            <Heart color="#FF6522" fill="white" size={22} />
+          </div>
+        </div>
         <Image
           src={hero1}
           alt="img"
@@ -197,7 +209,12 @@ export function CustomHousingGrid() {
           </div>
         </div>
       </div>{" "}
-      <div>
+      <div className="relative">
+        <div className="absolute top-3 left-3 w-9 h-9 bg-white rounded-full">
+          <div className="flex items-center justify-center h-full">
+            <Heart color="#FF6522" fill="white" size={22} />
+          </div>
+        </div>
         <Image
           src={hero1}
           alt="img"
@@ -235,7 +252,12 @@ export function CustomHousingGrid() {
           </div>
         </div>
       </div>{" "}
-      <div>
+      <div className="relative">
+        <div className="absolute top-3 left-3 w-9 h-9 bg-white rounded-full">
+          <div className="flex items-center justify-center h-full">
+            <Heart color="#FF6522" fill="white" size={22} />
+          </div>
+        </div>
         <Image
           src={hero1}
           alt="img"
@@ -309,7 +331,7 @@ export function CustomBanner({ img }: any) {
 export const GridTemplate = () => {
   return (
     <div className="grid md:grid-cols-4 grid-cols-1 md:grid-rows-6 gap-x-5 gap-y-12 ">
-      <div className="md:row-span-3">
+      <div className="md:row-span-3 relative">
         <Image
           src={hero1}
           alt="img"
@@ -369,11 +391,11 @@ export const ThreeCols = ({ img }: any) => {
               </span>
               <p className="p-medium-20">Comfortable</p>
             </div>
-            <span className="text-gray-400 text-3xl font-semibold absolute right-0 top-0 h4-medium">
+            <span className="text-gray-400 text-3xl font-semibold absolute right-0 top-0 h4-medium ">
               01
             </span>
           </div>
-          <p className="text-gray-300 my-5">
+          <p className="text-gray-300 my-5 z-10">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
             varius pretium orci a aliquet.
           </p>
@@ -468,6 +490,7 @@ export const ThreeCols = ({ img }: any) => {
     </>
   );
 };
+
 export const TopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
 
