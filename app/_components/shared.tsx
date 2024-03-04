@@ -125,7 +125,12 @@ export const ProductCard = ({ img }: any) => {
 export function CustomHousingGrid() {
   return (
     <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
-      <div>
+      <div className="relative">
+        <div className="absolute top-3 left-3 w-9 h-9 bg-white rounded-full">
+          <div className="flex items-center justify-center h-full">
+            <Heart color="#FF6522" fill="white" size={22} />
+          </div>
+        </div>
         <Image
           src={hero1}
           alt="img"
@@ -161,7 +166,12 @@ export function CustomHousingGrid() {
           </div>
         </div>
       </div>{" "}
-      <div>
+      <div className="relative">
+        <div className="absolute top-3 left-3 w-9 h-9 bg-white rounded-full">
+          <div className="flex items-center justify-center h-full">
+            <Heart color="#FF6522" fill="white" size={22} />
+          </div>
+        </div>
         <Image
           src={hero1}
           alt="img"
@@ -199,7 +209,12 @@ export function CustomHousingGrid() {
           </div>
         </div>
       </div>{" "}
-      <div>
+      <div className="relative">
+        <div className="absolute top-3 left-3 w-9 h-9 bg-white rounded-full">
+          <div className="flex items-center justify-center h-full">
+            <Heart color="#FF6522" fill="white" size={22} />
+          </div>
+        </div>
         <Image
           src={hero1}
           alt="img"
@@ -237,7 +252,12 @@ export function CustomHousingGrid() {
           </div>
         </div>
       </div>{" "}
-      <div>
+      <div className="relative">
+        <div className="absolute top-3 left-3 w-9 h-9 bg-white rounded-full">
+          <div className="flex items-center justify-center h-full">
+            <Heart color="#FF6522" fill="white" size={22} />
+          </div>
+        </div>
         <Image
           src={hero1}
           alt="img"
@@ -311,7 +331,7 @@ export function CustomBanner({ img }: any) {
 export const GridTemplate = () => {
   return (
     <div className="grid md:grid-cols-4 grid-cols-1 md:grid-rows-6 gap-x-5 gap-y-12 ">
-      <div className="md:row-span-3">
+      <div className="md:row-span-3 relative">
         <Image
           src={hero1}
           alt="img"
