@@ -49,16 +49,18 @@ export function DatePickerDemo() {
   return (
     <Popover>
       <PopoverTrigger asChild>
-        <Button
-          variant={"outline"}
-          className={cn(
-            "min-w-[280px] justify-start text-left font-normal outline-none border-0 focus-visible:ring-transparent hover:bg-white",
-            !date && "text-muted-foreground"
-          )}
-        >
-          <CalendarIcon className="mr-2 h-6 w-6" />
-          {date ? format(date, "PPP") : <span>Pick a date</span>}
-        </Button>
+        <div className="flex items-center gap-2 border-r-2 md:w-auto w-full">
+          <CalendarIcon className="mr-2 h-6 w-6 " />
+          <Button
+            variant={"outline"}
+            className={cn(
+              "min-w-[280px] justify-start text-left font-normal outline-none border-0 focus-visible:ring-transparent hover:bg-white md:w-auto w-full",
+              !date && "text-muted-foreground"
+            )}
+          >
+            {date ? format(date, "PPP") : <span>Pick a date</span>}
+          </Button>
+        </div>
       </PopoverTrigger>
       <PopoverContent className="w-auto p-0">
         <Calendar

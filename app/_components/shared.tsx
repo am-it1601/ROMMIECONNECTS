@@ -10,7 +10,7 @@ import boat3 from "../../public/boat3.png";
 import boat4 from "../../public/boat4.png";
 import banner from "../../public/banner.png";
 import Image from "next/image";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
 import { FaQuoteRight } from "react-icons/fa";
 import {
@@ -48,7 +48,7 @@ export function CustomButton() {
   };
 
   return (
-    <div className="flex gap-8 items-center justify-between">
+    <div className="flex gap-8 items-center justify-between w-full">
       {buttons.map((button, index) => (
         <button
           key={button.title}
@@ -68,13 +68,13 @@ export function CustomButton() {
 
 export function CustomSearchButton() {
   return (
-    <div className="flex items-center justify-between gap-4 px-10 w-full ">
-      <div className="flex gap-4">
-        <div className=" flex items-center gap-2 border-r-2 ">
+    <div className="flex items-center justify-between gap-4 px-10 w-full flex-wrap max-sm:p-2">
+      <div className="flex gap-4 flex-wrap ">
+        <div className=" flex items-center gap-2 border-r-2 md:w-auto w-full">
           <HomeIcon size={25} />
           <CustomSelect />
         </div>
-        <div className=" border-r-2 border-gray-300 flex items-center gap-2">
+        <div className=" border-r-2 border-gray-300 flex items-center gap-2  md:w-auto w-full">
           <MapPin size={25} />
 
           <input
@@ -83,9 +83,11 @@ export function CustomSearchButton() {
             className=" p-3 focus:outline-none"
           />
         </div>
-        <DatePickerDemo />
+        <div className=" md:w-auto w-full">
+          <DatePickerDemo />
+        </div>
       </div>
-      <Button className="text-white bg-primary font-medium py-2 px-5 text-2xl rounded-full ">
+      <Button className="text-white bg-primary p-bold-20 py-2 px-5  rounded-full   md:w-auto w-full">
         search
       </Button>
     </div>
@@ -369,11 +371,11 @@ export const ThreeCols = ({ img }: any) => {
               </span>
               <p className="p-medium-20">Comfortable</p>
             </div>
-            <span className="text-gray-400 text-3xl font-semibold absolute right-0 top-0 h4-medium">
+            <span className="text-gray-400 text-3xl font-semibold absolute right-0 top-0 h4-medium ">
               01
             </span>
           </div>
-          <p className="text-gray-300 my-5">
+          <p className="text-gray-300 my-5 z-10">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
             varius pretium orci a aliquet.
           </p>
@@ -468,6 +470,50 @@ export const ThreeCols = ({ img }: any) => {
     </>
   );
 };
+
+export const TrendingSearches = () => {
+  const containerRef = useRef(null);
+
+  const scrollLeft = () => {
+    if (containerRef.current) {
+      containerRef.current.scrollLeft -= 100; // Adjust the scroll distance as needed
+    }
+  };
+
+  const scrollRight = () => {
+    if (containerRef.current) {
+      containerRef.current.scrollLeft += 100; // Adjust the scroll distance as needed
+    }
+  };
+
+  return (
+    <div className="mt-[100px] flex items-center justify-center gap-4 max-w-screen-2xl m-auto max-sm:hidden overflow-hidden">
+      <span className="p-bold-24 text-text_primary">Trending Searches : </span>
+      <div
+        ref={containerRef}
+        className="flex items-center justify-start gap-3 basis-0 min-w-[50%] overflow-x-auto scroll-pb-3 no-scrollbar"
+      >
+        <span className="bg-[#F5F5F5] rounded-full p-2 px-4 p-semibold-20 text-text_color whitespace-nowrap">
+          Karachi, Pakistan
+        </span>
+        {/* Add more spans here */}
+      </div>
+      <button
+        onClick={scrollLeft}
+        className="bg-primary p-2 rounded-full duration-75 transition-all ease-in-out"
+      >
+        {/* Add left arrow icon here */}
+      </button>
+      <button
+        onClick={scrollRight}
+        className="bg-primary p-2 rounded-full duration-75 transition-all ease-in-out"
+      >
+        {/* Add right arrow icon here */}
+      </button>
+    </div>
+  );
+};
+
 export const TopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
 

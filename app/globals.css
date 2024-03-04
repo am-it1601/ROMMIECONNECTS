@@ -135,6 +135,10 @@ body {
   .h2-medium {
     @apply font-medium text-[32px] leading-[40px] lg:text-[36px] lg:leading-[44px] xl:text-[40px] xl:leading-[48px];
   }
+  .h1-medium {
+    @apply font-bold text-[32px] leading-[40px] lg:text-[28px] lg:leading-[44px] xl:text-[32px] xl:leading-[48px];
+  }
+
 
   /* 36 */
   .h3-bold {
@@ -276,6 +280,17 @@ body {
   max-width: var(--max-width);
 }
 
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+} 
+
 @media screen and (min-width: 992px) {
   /* .section {
     width: 95vw;
@@ -312,6 +327,7 @@ Slider
   display: flex;
   overflow: hidden;
   /* background-color: blue; */
+  padding: 10px;
 }
 .dots{
   position: absolute;
@@ -362,9 +378,9 @@ article h4 {
 .next {
   position: absolute;
   top: 270px;
-  transform: translateY(-50%);
+  transform: translateY(-50%) rotate(-45deg);
   background: #FF6522;
-  /* transform: rotate(270deg); */
+  /* transform: rotate(-45deg); */
   color: white;
   width: 1.25rem;
   height: 1.25rem;
@@ -373,6 +389,18 @@ article h4 {
   border-color: transparent;
   font-size: 1rem;
   cursor: pointer;
+  margin: 0px 10px;
+  border-radius: 5px;
+
+
+}
+.prev .icon{
+  padding: 0;margin: 0;
+  transform: rotate(45deg);
+}
+.next .icon{
+  padding: 0;margin: 0;
+  transform: rotate(45deg);
 }
 .prev:hover,
 .next:hover {
@@ -420,19 +448,23 @@ article.nextSlide {
 
 .card {
   position: relative;
-  background-color: white; /* Initial background color */
-  color: black; /* Initial text color */
-  transition: color 0.3s ease-in-out; /* Transition text color */
+  background-color: white; 
+  color: black;
+  transition: color 0.3s ease-in-out; 
   border-radius: 10px !important;
+  z-index: 2;
 }
 
 .card:hover {
-  color: white; /* Change text color to white on hover */
+  color: white; 
+}
+.card:hover span{
+  color: white; 
+
 }
 
-
 .card::before {
-  /* z-index: 1; */
+  z-index: -1;
   content: "";
   position: absolute;
   top: 0;
@@ -443,8 +475,8 @@ article.nextSlide {
   background-size: cover;
   background-position: center;
   object-fit: fill;
-  transition: opacity 0.3s ease-in-out; /* Transition opacity */
-  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease-in-out; 
+  opacity: 0; 
 }
 
 .card:hover::before {

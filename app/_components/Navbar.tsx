@@ -46,7 +46,7 @@ const Navbar = () => {
               <li>
                 <Link
                   href="#"
-                  className="block py-2 px-3 md:p-0 text-black  rounded md:bg-transparent hover:text-primary p-bold-20"
+                  className="block py-2 px-3 md:p-0 text-text_primary  rounded md:bg-transparent hover:text-primary p-bold-20"
                   aria-current="page"
                 >
                   Home
@@ -55,7 +55,7 @@ const Navbar = () => {
               <li>
                 <Link
                   href="#"
-                  className="block py-2 px-3 md:p-0 text-gray-900 rounded  hover:text-primary p-bold-20    "
+                  className="block py-2 px-3 md:p-0 text-text_primary rounded  hover:text-primary p-bold-20    "
                 >
                   About
                 </Link>
@@ -63,7 +63,7 @@ const Navbar = () => {
               <li>
                 <Link
                   href="#"
-                  className="block py-2 px-3 md:p-0 text-gray-900 rounded  hover:text-primary p-bold-20"
+                  className="block py-2 px-3 md:p-0 text-text_primary rounded  hover:text-primary p-bold-20"
                 >
                   Services
                 </Link>
@@ -71,7 +71,7 @@ const Navbar = () => {
               <li>
                 <Link
                   href="#"
-                  className="block py-2 px-3 md:p-0 text-gray-900 rounded  hover:text-primary p-bold-20"
+                  className="block py-2 px-3 md:p-0 text-text_primary rounded  hover:text-primary p-bold-20"
                 >
                   Pricing
                 </Link>
@@ -79,7 +79,7 @@ const Navbar = () => {
               <li>
                 <Link
                   href="#"
-                  className="block py-2 px-3 md:p-0 text-gray-900 rounded  hover:text-primary p-bold-20"
+                  className="block py-2 px-3 md:p-0 text-text_primary rounded  hover:text-primary p-bold-20"
                 >
                   FAQ
                 </Link>
@@ -87,7 +87,7 @@ const Navbar = () => {
               <li>
                 <Link
                   href="#"
-                  className="block py-2 px-3 md:p-0 text-gray-900 rounded  hover:text-primary p-bold-20"
+                  className="block py-2 px-3 md:p-0 text-text_primary rounded  hover:text-primary p-bold-20"
                 >
                   Reviews
                 </Link>
@@ -95,7 +95,7 @@ const Navbar = () => {
               <li>
                 <Link
                   href="#"
-                  className="block py-2 px-3 md:p-0 text-gray-900 rounded  hover:text-primary p-bold-20"
+                  className="block py-2 px-3 md:p-0 text-text_primary rounded  hover:text-primary p-bold-20"
                 >
                   Footer
                 </Link>
