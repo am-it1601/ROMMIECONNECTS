@@ -471,49 +471,6 @@ export const ThreeCols = ({ img }: any) => {
   );
 };
 
-export const TrendingSearches = () => {
-  const containerRef = useRef(null);
-
-  const scrollLeft = () => {
-    if (containerRef.current) {
-      containerRef.current.scrollLeft -= 100; // Adjust the scroll distance as needed
-    }
-  };
-
-  const scrollRight = () => {
-    if (containerRef.current) {
-      containerRef.current.scrollLeft += 100; // Adjust the scroll distance as needed
-    }
-  };
-
-  return (
-    <div className="mt-[100px] flex items-center justify-center gap-4 max-w-screen-2xl m-auto max-sm:hidden overflow-hidden">
-      <span className="p-bold-24 text-text_primary">Trending Searches : </span>
-      <div
-        ref={containerRef}
-        className="flex items-center justify-start gap-3 basis-0 min-w-[50%] overflow-x-auto scroll-pb-3 no-scrollbar"
-      >
-        <span className="bg-[#F5F5F5] rounded-full p-2 px-4 p-semibold-20 text-text_color whitespace-nowrap">
-          Karachi, Pakistan
-        </span>
-        {/* Add more spans here */}
-      </div>
-      <button
-        onClick={scrollLeft}
-        className="bg-primary p-2 rounded-full duration-75 transition-all ease-in-out"
-      >
-        {/* Add left arrow icon here */}
-      </button>
-      <button
-        onClick={scrollRight}
-        className="bg-primary p-2 rounded-full duration-75 transition-all ease-in-out"
-      >
-        {/* Add right arrow icon here */}
-      </button>
-    </div>
-  );
-};
-
 export const TopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
 
